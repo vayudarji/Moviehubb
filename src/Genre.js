@@ -14,6 +14,7 @@ const Genre = ({genres , setGenres,selectedGenre,setSelectedGenre}) => {
 
   const HandleAddGenre = genre => {
     setSelectedGenre([...selectedGenre,genre]);
+    setGenres(genres?.filter(g => g?.id !== genre?.id))
   }
 
 
