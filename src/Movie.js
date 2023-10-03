@@ -7,12 +7,10 @@ const imgUrl = "https://via.placeholder.com/200/200";
 const Movie = () => {
   const { movie, isLoading } = useGlobalContext();
   if (isLoading) {
-    return <div className="loading">Loading....</div>;
+    return <div className=""></div>;
   }
 
-  /* plz subsribe to thapa technical channel 
-          https://www.youtube.com/thapatechnical
-         */
+ 
 
   return (
     <>
