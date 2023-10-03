@@ -17,11 +17,25 @@ const Genre = ({genres , setGenres,selectedGenre,setSelectedGenre}) => {
     setGenres(genres?.filter(g => g?.id !== genre?.id))
   }
 
+  const HandleRemoveGenre = genre => {
+    setSelectedGenre(
+      selectedGenre?.filter(selected => selected?.id !== genre?.id)
+    );
+    setGenres([...genres,genre]);
+  };
+
+
 
   return (
     <div style={{ padding: "10px 0" }}>
+      {selectedGenre?.map(genre=>(
+        <Chip onDelete={()=>HandleRemoveGenre(genre)} 
+        style={{color:"white", backgroundColor:"gray" , fontSize:"1.5em" , margin:"3px"}} 
+        clickable 
+        label={genre?.name} />
+      ))}
         {genres?.map(genre =>(
-          <Chip onClick={()=> HandleAddGenre(genre)} clickable style={{fontSize:"1.2em" , margin:"3px"}} label={genre?.name} color= "secondary"/>
+          <Chip onClick={()=> HandleAddGenre(genre)} clickable style={{fontSize:"1.5em" , margin:"3px"}} label={genre?.name} color= "secondary"/>
         ))}
     </div>
   )

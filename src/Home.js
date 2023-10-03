@@ -16,8 +16,8 @@ const Home = () => {
         
         <Header />
         <Search />
-        <GenMovie />
         <Movie />
+        <GenMovie />
         
         
       </div>
